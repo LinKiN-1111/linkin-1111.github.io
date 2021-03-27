@@ -1,0 +1,49 @@
+
+/* 隐藏回到顶部按钮，替换为up酱 */
+
+#go-up i {
+    display: none;
+    background-color: transparent !important;
+}
+
+#go-up {
+    background-color: transparent !important;
+}
+
+#upj {
+    transform: translate(-70px, -80px) !important;
+}
+/*新版3.0.0以上添加up酱置顶ico图标上移问题*/
+.fas.fa-arrow-up {
+    line-height: 2;
+}
+/* 目录隐藏按钮颜色 */
+
+#toggle-sidebar {
+    color: #e58a8a !important;
+}
+/* 博主昵称颜色 */
+.author-info__name {
+    color: black;
+}
+/* a标签默认颜色 */
+
+#article-container a {
+    color: #00c4b6;
+    text-decoration: none;
+}
+
+/* 鼠标悬停时的颜色 */
+
+#article-container a:hover {
+    color: #e58a8a;
+    text-decoration: none;
+}
+/*a标签颜色*/
+a {
+    color: #00c4b6;
+}
+/*添加图片top*/
+var top_up = "<img id='upj' class='upj' style='max-width: 1000%; transform: translate(-70px,-70px);' src='https://cdn.jsdelivr.net/gh/lete114/CDN/Use/up.gif' title='回到顶部' >";
+/*添加到返回顶部按钮下*/
+document.getElementById("go-up").innerHTML += top_up;
