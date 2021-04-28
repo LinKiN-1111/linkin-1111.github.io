@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/preview1.jpg">
 <meta property="article:published_time" content="2021-03-22T07:46:50.000Z">
-<meta property="article:modified_time" content="2021-04-28T14:45:27.809Z">
+<meta property="article:modified_time" content="2021-04-28T14:48:54.148Z">
 <meta property="article:author" content="LinKiN">
 <meta property="article:tag" content="Keep moving">
 <meta name="twitter:card" content="summary">
@@ -57,7 +57,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2021-04-28 22:45:27'
+  postUpdate: '2021-04-28 22:48:54'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -139,7 +139,7 @@
           document.documentElement.classList.remove('hide-aside')
         }
       }
-    })(window)</script><link rel="stylesheet" href="/css/LK.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/xuexiaoban.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/preview1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LinKiN</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">pikachu的暴力破解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-22T07:46:50.000Z" title="发表于 2021-03-22 15:46:50">2021-03-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-28T14:45:27.809Z" title="更新于 2021-04-28 22:45:27">2021-04-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="pikachu的暴力破解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="基于表单的暴力破解"><a href="#基于表单的暴力破解" class="headerlink" title="基于表单的暴力破解"></a>基于表单的暴力破解</h2><p>这个没什么难度，直接抓包然后用常用字典进行爆破即可。</p>
+    })(window)</script><link rel="stylesheet" href="/css/LK.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/xuexiaoban.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/preview1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LinKiN</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">pikachu的暴力破解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-22T07:46:50.000Z" title="发表于 2021-03-22 15:46:50">2021-03-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-28T14:48:54.148Z" title="更新于 2021-04-28 22:48:54">2021-04-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="pikachu的暴力破解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="基于表单的暴力破解"><a href="#基于表单的暴力破解" class="headerlink" title="基于表单的暴力破解"></a>基于表单的暴力破解</h2><p>这个没什么难度，直接抓包然后用常用字典进行爆破即可。</p>
 <hr>
 <h2 id="验证码绕过（on-server）"><a href="#验证码绕过（on-server）" class="headerlink" title="验证码绕过（on server）"></a>验证码绕过（on server）</h2><p>这个的思路是先获得一个验证码，然后测试验证码的有效时间，若能一直有效（或一段时间内有效），则使用该验证码进行爆破。  重点是要测试出验证码是否是在一段时间内有效。 tip：可以先使用Repeater测试，若成功再使用Intruder进行爆破。</p>
 <hr>
@@ -154,7 +154,7 @@
 <li>Payload中把Payload set 1 选择爆破字典</li>
 <li>Payload中把Payload set 2 改为Recursive grep模式</li>
 <li>Option中选定Grep-Extract，Add，Refetch response获得页面</li>
-<li>再代码中选定token的value (本来有一个初始的payload，但是因为burpsuite会有一次空请求，所以这个东西不设定也行。。。。。）</li>
+<li>再代码中选定token的value (本来有一个初始的payload，但是因为burpsuite会有一次空请求，所以这个东西不设定也行。。。不过后果就是第一个请求是无效请求。。。）</li>
 <li>攻击即可。。。。。</li>
 </ol>
 <p>重点是学习到了Recursive grep的用法。。。</p>
