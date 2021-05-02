@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>linux_Learning_Note | LinKiN</title><meta name="keywords" content="Keep moving"><meta name="author" content="LinKiN,LK13076621991@gmail.com"><meta name="copyright" content="LinKiN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="linux学习笔记        终端格式打开终端后的提示:（以kali系统为例）  (root@kali)-[~]$     (root@kali)-[&#x2F;home&#x2F;linkin]#  [当前登录用户名@主机名称]-[当前所在路径]#&#x2F;$#表示身份为超级管理员$表示身份普通用户 首先了解当前系统信息硬盘大小所用命令:fdisk -l&#x2F;dev&#x2F;sda 操作系统中第一块硬盘的名称以及所在的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux_Learning_Note">
+<meta property="og:url" content="http://example.com/2021/05/02/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note/index.html">
+<meta property="og:site_name" content="LinKiN">
+<meta property="og:description" content="linux学习笔记        终端格式打开终端后的提示:（以kali系统为例）  (root@kali)-[~]$     (root@kali)-[&#x2F;home&#x2F;linkin]#  [当前登录用户名@主机名称]-[当前所在路径]#&#x2F;$#表示身份为超级管理员$表示身份普通用户 首先了解当前系统信息硬盘大小所用命令:fdisk -l&#x2F;dev&#x2F;sda 操作系统中第一块硬盘的名称以及所在的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/preview1.jpg">
+<meta property="article:published_time" content="2021-05-02T15:58:42.000Z">
+<meta property="article:modified_time" content="2021-05-02T16:13:16.133Z">
+<meta property="article:author" content="LinKiN">
+<meta property="article:tag" content="Keep moving">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/preview1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/05/02/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-05-03 00:13:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/LK.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/xuexiaoban.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/preview1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LinKiN</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">linux_Learning_Note</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-02T15:58:42.000Z" title="发表于 2021-05-02 23:58:42">2021-05-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-02T16:13:16.133Z" title="更新于 2021-05-03 00:13:16">2021-05-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="linux_Learning_Note"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><font size=10>      <strong>linux学习笔记</strong>       </font></p>
+<h1 id="终端格式"><a href="#终端格式" class="headerlink" title="终端格式"></a>终端格式</h1><p>打开终端后的提示:（以kali系统为例）</p>
+<ol>
+<li>(root@kali)-[~]$    </li>
+<li>(root@kali)-[/home/linkin]#</li>
+</ol>
+<p>[当前登录用户名@主机名称]-[当前所在路径]#/$<br>#表示身份为超级管理员<br>$表示身份普通用户</p>
+<h1 id="首先了解当前系统信息"><a href="#首先了解当前系统信息" class="headerlink" title="首先了解当前系统信息"></a>首先了解当前系统信息</h1><h2 id="硬盘大小"><a href="#硬盘大小" class="headerlink" title="硬盘大小"></a>硬盘大小</h2><p>所用命令:<code>fdisk -l</code><br>/dev/sda 操作系统中第一块硬盘的名称以及所在的路径<br>linux操作系统中一切皆文件（即都有文件名） sd(硬盘类型) a(第一块)</p>
+<h2 id="内存大小"><a href="#内存大小" class="headerlink" title="内存大小"></a>内存大小</h2><p><code>cat  /proc/meminfo</code><br>注意total即可。。。</p>
+<h2 id="cpu大小"><a href="#cpu大小" class="headerlink" title="cpu大小"></a>cpu大小</h2><p><code>cat /proc/cpuinfo</code></p>
+<h2 id="关机和重启的命令"><a href="#关机和重启的命令" class="headerlink" title="关机和重启的命令"></a>关机和重启的命令</h2><p>关机:<code>poweroff</code><br>重启:<code>reboot</code></p>
+<h1 id="linux操作系统"><a href="#linux操作系统" class="headerlink" title="linux操作系统"></a>linux操作系统</h1><h2 id="linux操作系统树状结构"><a href="#linux操作系统树状结构" class="headerlink" title="linux操作系统树状结构"></a>linux操作系统树状结构</h2><p>/   — 操作系统的起始路径(根路径)<br>目录 == 文件夹<br>..(上级目录)<br>cd (change direction)<br>pwd (显示当前所在目录路径)<br>ls (list，列出当前目录内容）</p>
+<h2 id="根目录下的目录作用"><a href="#根目录下的目录作用" class="headerlink" title="根目录下的目录作用"></a>根目录下的目录作用</h2><ol>
+<li>/bin    — 普通用户和管理员都可以执行的命令字(例如CAT)</li>
+<li>/sbin   — 只有管理员才能执行的命令 (例如开机重启)</li>
+<li>/boot  — 引导 主引导目录 独立分区 启动菜单 内核(vmliuz)</li>
+<li>/dev   — device设备 设备文件存放目录</li>
+<li>/etc   — 配置文件存放目录</li>
+<li>/home — 普通用户的家目录</li>
+<li>/root  —管理员的家目录</li>
+<li>/media  — 光驱的挂载目录</li>
+<li>/mnt  — 临时设备挂载目录</li>
+<li>/proc  —里面的数据都在内存中，进程的所在目录</li>
+<li>/tmp  —临时文件存放目录</li>
+<li>/usr   —软件的安装目录</li>
+<li>/var   —常变文件存放目录（日志文件、邮件文件）</li>
+<li>后面的暂时不重要，先不要求记忆</li>
+<li>/lost+found  — 暂时不重要，没讲</li>
+<li>/lib(lib64) —例如可以用于存放python包（即函数库）之类的东西（暂时不重要）</li>
+</ol>
+<h1 id="快捷键应用"><a href="#快捷键应用" class="headerlink" title="快捷键应用"></a>快捷键应用</h1><h2 id="安装VMwaretools"><a href="#安装VMwaretools" class="headerlink" title="安装VMwaretools"></a>安装VMwaretools</h2><p>该工具可以实现虚拟机和真实机之间的文件复制 （txt文件等编码要改为UTF-8）因为windows默认编码是ANSI；linux是UTF-8.需要编码对应</p>
+<h2 id="快捷键功能"><a href="#快捷键功能" class="headerlink" title="快捷键功能"></a>快捷键功能</h2><ol>
+<li>Tab键功能 补齐命令字和已存在文件名称补齐</li>
+<li>清楚屏幕内容  ctrl+l</li>
+<li>终止快捷键    ctrl+c</li>
+</ol>
+<h2 id="linux系统中如何分辨文件类型"><a href="#linux系统中如何分辨文件类型" class="headerlink" title="linux系统中如何分辨文件类型"></a>linux系统中如何分辨文件类型</h2><p>蓝色（kali下蓝色） — 目录（文件夹）<br>黑色（kali下白色）— 普通文件（大部分可以cat）<br>浅蓝色（kali下浅蓝色） — 符号链接（即windows下的快捷方式）<br>黑底黄字（kali下橘色） — 设备文件 硬盘 sda<br>绿色（kali下绿色）   — 带有执行权限的文件<br>红色（kali下红色）   — 压缩文件<br>紫色：（kali下紫色） — 图片 模块<br>kali下：<br>红色闪烁：表示链接的文件有问题<br>灰色：表示其它文件</p>
+<h1 id="基础命令（增删改查）"><a href="#基础命令（增删改查）" class="headerlink" title="基础命令（增删改查）"></a>基础命令（增删改查）</h1><h2 id="查询命令"><a href="#查询命令" class="headerlink" title="查询命令"></a>查询命令</h2><p>查询文件：查询目录下有什么内容、查看文件中的内容</p>
+<h3 id="查询目录下有什么内容"><a href="#查询目录下有什么内容" class="headerlink" title="查询目录下有什么内容"></a>查询目录下有什么内容</h3><p><code>ls</code></p>
+<h3 id="查看文件中的内容"><a href="#查看文件中的内容" class="headerlink" title="查看文件中的内容"></a>查看文件中的内容</h3><p><code>cat</code></p>
+<h2 id="创建命令"><a href="#创建命令" class="headerlink" title="创建命令"></a>创建命令</h2><p>创建命令：创建文件、创建目录</p>
+<h3 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h3><p><code>touch 文件名</code>   echo “写入内容”  &gt; (绝对路径)文件（没有会创建）</p>
+<h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><p><code>mkdir 目录名</code>   make directory</p>
+<h2 id="改动命令"><a href="#改动命令" class="headerlink" title="改动命令"></a>改动命令</h2><p>改：剪切、复制</p>
+<h3 id="剪切"><a href="#剪切" class="headerlink" title="剪切"></a>剪切</h3><p><code>mv</code>  mv 文件 目录<br>同时mv有重命名的作用 mv 文件名 文件名</p>
+<h3 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h3><p><code>cp</code>  cp 文件名 目录（在文件目录下复制一个文件）<br>cp 文件1 文件2 （创建一个文件2内容与文件1）</p>
+<h3 id="符号链接（快捷方式）"><a href="#符号链接（快捷方式）" class="headerlink" title="符号链接（快捷方式）"></a>符号链接（快捷方式）</h3><p>创建符号链接<code>ln -s</code>  ln -s 源文件（带绝对路径） 建立的链接文件（绝对路径）<br>最后在绝对路径下可带名字也可不带（是否重命名而已）</p>
+<h2 id="删除命令"><a href="#删除命令" class="headerlink" title="删除命令"></a>删除命令</h2><p><code>rm</code>  remove移除  rm 文件名 或 rm -f 文件（强制删除）<br>rm -rf 目录(要用-rf才能删除 因为目录下有多个文件，需要循环删除)</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:LK13076621991@gmail.com">LinKiN</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/05/02/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note/">http://example.com/2021/05/02/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">LinKiN</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/preview1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/04/26/WEB%E5%AE%89%E5%85%A8/dvwa-Blind/"><img class="next-cover" src="/img/preview1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">dvwa_Blind</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/xuexiaoban.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">LinKiN</div><div class="author-info__description">Fast is slow</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Sad!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">终端格式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E4%BA%86%E8%A7%A3%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF"><span class="toc-number">2.</span> <span class="toc-text">首先了解当前系统信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E7%9B%98%E5%A4%A7%E5%B0%8F"><span class="toc-number">2.1.</span> <span class="toc-text">硬盘大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F"><span class="toc-number">2.2.</span> <span class="toc-text">内存大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cpu%E5%A4%A7%E5%B0%8F"><span class="toc-number">2.3.</span> <span class="toc-text">cpu大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E6%9C%BA%E5%92%8C%E9%87%8D%E5%90%AF%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">2.4.</span> <span class="toc-text">关机和重启的命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.</span> <span class="toc-text">linux操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A0%91%E7%8A%B6%E7%BB%93%E6%9E%84"><span class="toc-number">3.1.</span> <span class="toc-text">linux操作系统树状结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%9C%E7%94%A8"><span class="toc-number">3.2.</span> <span class="toc-text">根目录下的目录作用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%BA%94%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">快捷键应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85VMwaretools"><span class="toc-number">4.1.</span> <span class="toc-text">安装VMwaretools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%8A%9F%E8%83%BD"><span class="toc-number">4.2.</span> <span class="toc-text">快捷键功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%A6%82%E4%BD%95%E5%88%86%E8%BE%A8%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.3.</span> <span class="toc-text">linux系统中如何分辨文件类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%EF%BC%88%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">基础命令（增删改查）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4"><span class="toc-number">5.1.</span> <span class="toc-text">查询命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%9C%89%E4%BB%80%E4%B9%88%E5%86%85%E5%AE%B9"><span class="toc-number">5.1.1.</span> <span class="toc-text">查询目录下有什么内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">5.1.2.</span> <span class="toc-text">查看文件中的内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%91%BD%E4%BB%A4"><span class="toc-number">5.2.</span> <span class="toc-text">创建命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-number">5.2.1.</span> <span class="toc-text">创建文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="toc-number">5.2.2.</span> <span class="toc-text">创建目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B9%E5%8A%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">5.3.</span> <span class="toc-text">改动命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%AA%E5%88%87"><span class="toc-number">5.3.1.</span> <span class="toc-text">剪切</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6"><span class="toc-number">5.3.2.</span> <span class="toc-text">复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5%EF%BC%88%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%EF%BC%89"><span class="toc-number">5.3.3.</span> <span class="toc-text">符号链接（快捷方式）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%91%BD%E4%BB%A4"><span class="toc-number">5.4.</span> <span class="toc-text">删除命令</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/02/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note/" title="linux_Learning_Note"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux_Learning_Note"/></a><div class="content"><a class="title" href="/2021/05/02/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note/" title="linux_Learning_Note">linux_Learning_Note</a><time datetime="2021-05-02T15:58:42.000Z" title="发表于 2021-05-02 23:58:42">2021-05-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/26/WEB%E5%AE%89%E5%85%A8/dvwa-Blind/" title="dvwa_Blind"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dvwa_Blind"/></a><div class="content"><a class="title" href="/2021/04/26/WEB%E5%AE%89%E5%85%A8/dvwa-Blind/" title="dvwa_Blind">dvwa_Blind</a><time datetime="2021-04-26T15:26:31.000Z" title="发表于 2021-04-26 23:26:31">2021-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/19/WEB%E5%AE%89%E5%85%A8/dvwa-SQL-injection/" title="dvwa_SQL_injection"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dvwa_SQL_injection"/></a><div class="content"><a class="title" href="/2021/04/19/WEB%E5%AE%89%E5%85%A8/dvwa-SQL-injection/" title="dvwa_SQL_injection">dvwa_SQL_injection</a><time datetime="2021-04-19T13:38:49.000Z" title="发表于 2021-04-19 21:38:49">2021-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/18/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/algorithm-Note2/" title="algorithm_Note2"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="algorithm_Note2"/></a><div class="content"><a class="title" href="/2021/04/18/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/algorithm-Note2/" title="algorithm_Note2">algorithm_Note2</a><time datetime="2021-04-17T16:23:08.000Z" title="发表于 2021-04-18 00:23:08">2021-04-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/15/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/algorithm-Note/" title="algorithm_Note"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="algorithm_Note"/></a><div class="content"><a class="title" href="/2021/04/15/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/algorithm-Note/" title="algorithm_Note">algorithm_Note</a><time datetime="2021-04-15T13:39:05.000Z" title="发表于 2021-04-15 21:39:05">2021-04-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2021  <i id="heartbeat" class="fa fas fa-heartbeat"></i> LinKiN</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css">
+</head></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script data-pjax src="https://butterfly.lete114.top/js/Lete.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
