@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>linux_Learning_Note4 | LinKiN</title><meta name="keywords" content="Keep moving"><meta name="author" content="LinKiN,LK13076621991@gmail.com"><meta name="copyright" content="LinKiN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="linux_Learning_Note4  查看基本信息查看CPU信息cat &#x2F;proc&#x2F;cpuinfo  查看内容信息cat &#x2F;proc&#x2F;meminfo 查看硬件信息lspci 例：lscpu，也可以查看CPU信息。。。 硬盘使用情况df -TH 查看系统相关信息我是谁：whoami还有谁：whoLinux内核版本信息：uname -aLinux发发行版本信息:1.redhat系列：cat &#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux_Learning_Note4">
+<meta property="og:url" content="http://example.com/2021/05/07/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note4/index.html">
+<meta property="og:site_name" content="LinKiN">
+<meta property="og:description" content="linux_Learning_Note4  查看基本信息查看CPU信息cat &#x2F;proc&#x2F;cpuinfo  查看内容信息cat &#x2F;proc&#x2F;meminfo 查看硬件信息lspci 例：lscpu，也可以查看CPU信息。。。 硬盘使用情况df -TH 查看系统相关信息我是谁：whoami还有谁：whoLinux内核版本信息：uname -aLinux发发行版本信息:1.redhat系列：cat &#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/preview1.jpg">
+<meta property="article:published_time" content="2021-05-07T03:46:20.000Z">
+<meta property="article:modified_time" content="2021-05-07T04:12:08.983Z">
+<meta property="article:author" content="LinKiN">
+<meta property="article:tag" content="Keep moving">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/preview1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/05/07/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-05-07 12:12:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/LK.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/xuexiaoban.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/preview1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LinKiN</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">linux_Learning_Note4</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-07T03:46:20.000Z" title="发表于 2021-05-07 11:46:20">2021-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-07T04:12:08.983Z" title="更新于 2021-05-07 12:12:08">2021-05-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="linux_Learning_Note4"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><font size=6> <strong>linux_Learning_Note4</strong> </font></p>
+<h1 id="查看基本信息"><a href="#查看基本信息" class="headerlink" title="查看基本信息"></a>查看基本信息</h1><h2 id="查看CPU信息"><a href="#查看CPU信息" class="headerlink" title="查看CPU信息"></a>查看CPU信息</h2><p><code>cat /proc/cpuinfo</code> </p>
+<h2 id="查看内容信息"><a href="#查看内容信息" class="headerlink" title="查看内容信息"></a>查看内容信息</h2><p><code>cat /proc/meminfo</code></p>
+<h2 id="查看硬件信息"><a href="#查看硬件信息" class="headerlink" title="查看硬件信息"></a>查看硬件信息</h2><p><code>lspci</code> 例：<code>lscpu</code>，也可以查看CPU信息。。。</p>
+<h2 id="硬盘使用情况"><a href="#硬盘使用情况" class="headerlink" title="硬盘使用情况"></a>硬盘使用情况</h2><p><code>df -TH</code></p>
+<h2 id="查看系统相关信息"><a href="#查看系统相关信息" class="headerlink" title="查看系统相关信息"></a>查看系统相关信息</h2><p>我是谁：<code>whoami</code><br>还有谁：<code>who</code><br>Linux内核版本信息：<code>uname -a</code><br>Linux发发行版本信息:1.redhat系列：<code>cat /etc/redhat-release</code> ;2.debian系列:<code>cat /etc/issue</code></p>
+<h2 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h2><p><code>top</code>：相当于windows里面的任务管理器（q退出）<br><code>ps</code> 参数：-a列出当前活跃进程，-e列出所有进程，-ef列出更详细的信息，-aux也是列出更详细的信息</p>
+<h1 id="中断、停止进程"><a href="#中断、停止进程" class="headerlink" title="中断、停止进程"></a>中断、停止进程</h1><h2 id="中断进程（即后台运行）"><a href="#中断进程（即后台运行）" class="headerlink" title="中断进程（即后台运行）"></a>中断进程（即后台运行）</h2><p>Ctrl+C为中断进程，并未结束进程。</p>
+<h2 id="停止进程"><a href="#停止进程" class="headerlink" title="停止进程"></a>停止进程</h2><p>Ctrl+z为停止进程，进程停止。<br>找到进程：<code>ps -e|grep 进程名字</code><br>中止进程：<code>kill 参数 PID</code>即可结束进程。。。参数：-15正常结束；-9强制结束</p>
+<h1 id="查看运行服务"><a href="#查看运行服务" class="headerlink" title="查看运行服务"></a>查看运行服务</h1><p><code>chkconfig --list</code>：查看所有服务的启动状态<br><code>chkconfig --list|grep 服务名</code><br>上方命令为旧版系统使用，不建议使用。。。<br><code>systemctl status 服务名</code><br><code>systemctl start|restart|stop 服务名</code>：开启/关闭服务</p>
+<h1 id="系统网络状态"><a href="#系统网络状态" class="headerlink" title="系统网络状态"></a>系统网络状态</h1><p>查看ip地址：<code>ip a(address) show</code><br>网络连通性：<code>ping url</code><br>有哪些进程联网：<code>ss -atunp</code>：tcp.udp,n:有效;p:进程</p>
+<h1 id="软件管理"><a href="#软件管理" class="headerlink" title="软件管理"></a>软件管理</h1><p>yum命令（在kali系统下需要安装才可使用）<br><code>yum update</code> ：更新镜像源（不会更新软件）<br><code>yum search</code> ：没用过，应该是查找软件。。。<br><code>yum install 软件名</code>：安装软件 例：yum install vim<br><code>yum remove 软件名</code>：删除软件 例：yum remove vim<br>其中kali为debian系，所以要使用apt。。。</p>
+<h1 id="SSH远程管理"><a href="#SSH远程管理" class="headerlink" title="SSH远程管理"></a>SSH远程管理</h1><p>Linux远程管理软件:putty、Xshell、SecureCRT</p>
+<h1 id="Linux帮助命令"><a href="#Linux帮助命令" class="headerlink" title="Linux帮助命令"></a>Linux帮助命令</h1><p>帮助–help或-h<br><code>man 命令</code>其中PageDown下翻、PageUP上翻、home开头、End结尾、/string搜索、？String、q离开<br>Info也可以。。。</p>
+<p>linux就暂时告一段落了，怎么说呢，好像学了点什么，又好像什么都没学。大概留一个印象吧，到时需要深入学习的时候再回过头看看这里的基础吧。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:LK13076621991@gmail.com">LinKiN</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/05/07/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note4/">http://example.com/2021/05/07/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">LinKiN</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/preview1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/05/03/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note3/"><img class="next-cover" src="/img/preview1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">linux_Learning_Note3</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/xuexiaoban.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">LinKiN</div><div class="author-info__description">Fast is slow</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Sad!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text">查看基本信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8BCPU%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">查看CPU信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AE%B9%E4%BF%A1%E6%81%AF"><span class="toc-number">1.2.</span> <span class="toc-text">查看内容信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%A1%AC%E4%BB%B6%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.</span> <span class="toc-text">查看硬件信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E7%9B%98%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-number">1.4.</span> <span class="toc-text">硬盘使用情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="toc-number">1.5.</span> <span class="toc-text">查看系统相关信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.6.</span> <span class="toc-text">查看进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E3%80%81%E5%81%9C%E6%AD%A2%E8%BF%9B%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">中断、停止进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E8%BF%9B%E7%A8%8B%EF%BC%88%E5%8D%B3%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">中断进程（即后台运行）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%9C%E6%AD%A2%E8%BF%9B%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">停止进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1"><span class="toc-number">3.</span> <span class="toc-text">查看运行服务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81"><span class="toc-number">4.</span> <span class="toc-text">系统网络状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">软件管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSH%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">SSH远程管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">7.</span> <span class="toc-text">Linux帮助命令</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/07/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note4/" title="linux_Learning_Note4"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux_Learning_Note4"/></a><div class="content"><a class="title" href="/2021/05/07/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note4/" title="linux_Learning_Note4">linux_Learning_Note4</a><time datetime="2021-05-07T03:46:20.000Z" title="发表于 2021-05-07 11:46:20">2021-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/03/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note3/" title="linux_Learning_Note3"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux_Learning_Note3"/></a><div class="content"><a class="title" href="/2021/05/03/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note3/" title="linux_Learning_Note3">linux_Learning_Note3</a><time datetime="2021-05-03T15:59:44.000Z" title="发表于 2021-05-03 23:59:44">2021-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/03/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note2/" title="linux_Learning_Note2"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux_Learning_Note2"/></a><div class="content"><a class="title" href="/2021/05/03/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note2/" title="linux_Learning_Note2">linux_Learning_Note2</a><time datetime="2021-05-03T13:24:59.000Z" title="发表于 2021-05-03 21:24:59">2021-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/02/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note/" title="linux_Learning_Note"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux_Learning_Note"/></a><div class="content"><a class="title" href="/2021/05/02/%E6%9D%82%E9%A1%B9%E5%AD%A6%E4%B9%A0/linux-Learning-Note/" title="linux_Learning_Note">linux_Learning_Note</a><time datetime="2021-05-02T15:58:42.000Z" title="发表于 2021-05-02 23:58:42">2021-05-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/26/WEB%E5%AE%89%E5%85%A8/dvwa-Blind/" title="dvwa_Blind"><img src="/img/preview1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dvwa_Blind"/></a><div class="content"><a class="title" href="/2021/04/26/WEB%E5%AE%89%E5%85%A8/dvwa-Blind/" title="dvwa_Blind">dvwa_Blind</a><time datetime="2021-04-26T15:26:31.000Z" title="发表于 2021-04-26 23:26:31">2021-04-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;undefined - 2021  <i id="heartbeat" class="fa fas fa-heartbeat"></i> LinKiN</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css">
+</head></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script data-pjax src="https://butterfly.lete114.top/js/Lete.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
